@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Farcaster API V2
-  version: "2.13.1"
+  version: "2.14.0"
   description: >
     The Farcaster API allows you to interact with the Farcaster protocol.
     See the [Neynar docs](https://docs.neynar.com/reference) for more details.
@@ -1790,6 +1790,10 @@ components:
                 - $ref: "#/components/schemas/Fid"
         author:
           $ref: "#/components/schemas/UserDehydrated"
+        app:
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/UserDehydrated"
         text:
           type: string
         timestamp:
@@ -2930,6 +2934,10 @@ components:
           type: string
         author:
           $ref: "#/components/schemas/UserDehydrated"
+        app:
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/UserDehydrated"
     ReactionWithUserInfo:
       type: object
       required:
